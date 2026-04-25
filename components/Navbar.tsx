@@ -111,12 +111,12 @@ export function Navbar() {
         <div
           className={[
             "md:hidden overflow-hidden transition-[max-height,opacity] duration-300",
-            isOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0",
+            isOpen ? "max-h-[calc(100vh-4rem)] opacity-100" : "max-h-0 opacity-0",
           ].join(" ")}
         >
           <div className="px-6 md:px-12 lg:px-20 pb-4">
             <div className="max-w-7xl mx-auto rounded-2xl border border-white/35 bg-white/85 backdrop-blur-md p-3 shadow-lg shadow-black/10">
-              <div className="flex flex-col">
+              <div className="flex flex-col overflow-auto overscroll-contain max-h-[calc(100vh-5rem)] pb-[calc(env(safe-area-inset-bottom)+0.75rem)]">
                 {items.map((item) => (
                   <button
                     key={item.href}
@@ -129,7 +129,7 @@ export function Navbar() {
                 ))}
                 <a
                   href="tel:9404821656"
-                  className="mt-2 inline-flex items-center justify-center rounded-xl bg-slate-900 text-white font-semibold px-4 py-3"
+                  className="sticky bottom-0 mt-2 inline-flex items-center justify-center rounded-xl bg-slate-900 text-white font-semibold px-4 py-3 shadow-lg shadow-black/15"
                 >
                   Call Now
                 </a>
