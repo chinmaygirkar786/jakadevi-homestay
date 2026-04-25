@@ -20,3 +20,8 @@ body {
 html {
   scroll-behavior: auto;
 }
+
+/* Keep section headings visible under sticky navbar */
+section[id] {
+  scroll-margin-top: 96px;
+}

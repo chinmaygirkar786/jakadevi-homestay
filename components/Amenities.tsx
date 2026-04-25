@@ -9,10 +9,11 @@ const amenities = [
 
 export function Amenities() {
   return (
-    <section id="amenities" className="py-20">
+    <section className="py-20">
       <div className="px-6 md:px-12 lg:px-20">
         <div className="max-w-7xl mx-auto">
           <div className="rounded-2xl border border-white/35 bg-white/85 backdrop-blur-md shadow-lg shadow-black/10 p-6 sm:p-10">
+            <div id="amenities" className="scroll-mt-24" />
             <p className="text-sm font-semibold tracking-wide text-sky-700">
               Essentials
             </p>

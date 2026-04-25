@@ -3,9 +3,10 @@ import { MapPin, PhoneCall } from "lucide-react";
 
 export function Contact() {
   return (
-    <section id="contact" className="py-20">
+    <section className="py-20">
       <div className="px-6 md:px-12 lg:px-20">
         <div className="max-w-7xl mx-auto">
+          <div id="contact" className="scroll-mt-24" />
           <div className="rounded-2xl border border-white/15 bg-white/10 backdrop-blur-md shadow-lg shadow-black/5 overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-2">
               <div className="p-4 sm:p-6 lg:p-8">

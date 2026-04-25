@@ -73,11 +73,12 @@ export function Gallery() {
   };
 
   return (
-    <section id="gallery" className="py-20">
+    <section className="py-20">
       <div className="px-6 md:px-12 lg:px-20">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-end justify-between gap-6">
             <div>
+              <div id="gallery" className="scroll-mt-24" />
               <p className="text-sm font-semibold tracking-wide text-sky-700">
                 Moments
               </p>

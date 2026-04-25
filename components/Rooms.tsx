@@ -26,17 +26,50 @@ const rooms = [
 
 export function Rooms() {
   return (
-    <section id="rooms" className="py-20">
+    <section className="py-20">
       <div className="px-6 md:px-12 lg:px-20">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-end justify-between gap-6">
             <div>
+              <div id="rooms" className="scroll-mt-24" />
               <p className="text-sm font-semibold tracking-wide text-sky-700">
                 Stay options
               </p>
               <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900">
                 Rooms designed for restful coastal days
               </h2>
+            </div>
+
+            <div className="hidden sm:block">
+              <div className="rounded-2xl border border-white/35 bg-white/85 backdrop-blur-md shadow-lg shadow-black/10 px-5 py-4">
+                <p className="text-sm font-semibold text-slate-900">Pricing</p>
+                <div className="mt-2 grid grid-cols-2 gap-3 text-sm">
+                  <div className="rounded-xl border border-slate-900/10 bg-white/70 px-3 py-2">
+                    <p className="text-slate-700 font-medium">AC Rooms</p>
+                    <p className="text-slate-900 font-semibold">₹1500</p>
+                  </div>
+                  <div className="rounded-xl border border-slate-900/10 bg-white/70 px-3 py-2">
+                    <p className="text-slate-700 font-medium">Non‑AC Rooms</p>
+                    <p className="text-slate-900 font-semibold">₹1200</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-6 sm:hidden">
+            <div className="rounded-2xl border border-white/35 bg-white/85 backdrop-blur-md shadow-lg shadow-black/10 p-5">
+              <p className="text-sm font-semibold text-slate-900">Pricing</p>
+              <div className="mt-3 grid grid-cols-2 gap-3 text-sm">
+                <div className="rounded-xl border border-slate-900/10 bg-white/70 px-3 py-2">
+                  <p className="text-slate-700 font-medium">AC Rooms</p>
+                  <p className="text-slate-900 font-semibold">₹1500</p>
+                </div>
+                <div className="rounded-xl border border-slate-900/10 bg-white/70 px-3 py-2">
+                  <p className="text-slate-700 font-medium">Non‑AC Rooms</p>
+                  <p className="text-slate-900 font-semibold">₹1200</p>
+                </div>
+              </div>
             </div>
           </div>
 
