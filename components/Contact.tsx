@@ -3,10 +3,9 @@ import { MapPin, PhoneCall } from "lucide-react";
 
 export function Contact() {
   return (
-    <section className="py-20">
+    <section id="contact" className="py-20">
       <div className="px-6 md:px-12 lg:px-20">
         <div className="max-w-7xl mx-auto">
-          <div id="contact" className="scroll-mt-24" />
           <div className="rounded-2xl border border-white/15 bg-white/10 backdrop-blur-md shadow-lg shadow-black/5 overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-2">
               <div className="p-4 sm:p-6 lg:p-8">
@@ -70,7 +69,7 @@ export function Contact() {
                     <div className="hidden lg:block relative h-44">
                       <Image
                         src="/images/IMG-20260424-WA0028.jpg"
-                        alt="Coastal vibe"
+                        alt="Jakadevi Homestay in Malvan near the beach"
                         fill
                         className="object-cover"
                         sizes="(min-width: 1024px) 520px, 0px"

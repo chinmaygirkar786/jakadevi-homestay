@@ -46,7 +46,7 @@ export function Navbar() {
     };
   }, [isOpen]);
 
-  const navOffset = 0;
+  const navOffset = 130;
 
   const handleNav = (href: string) => {
     setIsOpen(false);
@@ -54,6 +54,14 @@ export function Navbar() {
     window.setTimeout(() => {
       lenisScrollTo(href, navOffset);
     }, 50);
+  };
+
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
+    e.preventDefault();
+    handleNav(href);
   };
 
   return (
@@ -69,9 +77,9 @@ export function Navbar() {
         >
           <div className="px-6 md:px-12 lg:px-20">
             <div className="max-w-7xl mx-auto h-16 flex items-center justify-between">
-              <button
-                type="button"
-                onClick={() => handleNav("#home")}
+              <a
+                href="#home"
+                onClick={(e) => handleNavClick(e, "#home")}
                 className={[
                   "cursor-pointer tracking-tight text-transparent bg-clip-text bg-linear-to-r text-lg sm:text-xl leading-none font-(--font-display)",
                   "from-sky-700 to-cyan-600",
@@ -79,7 +87,7 @@ export function Navbar() {
                 aria-label="Go to home"
               >
                 Jakadevi Homestay
-              </button>
+              </a>
 
               <nav
                 className={[
@@ -88,17 +96,17 @@ export function Navbar() {
                 ].join(" ")}
               >
                 {items.map((item) => (
-                  <button
+                  <a
                     key={item.href}
-                    type="button"
-                    onClick={() => handleNav(item.href)}
+                    href={item.href}
+                    onClick={(e) => handleNavClick(e, item.href)}
                     className={[
                       "cursor-pointer transition-colors",
                       "hover:text-slate-900",
                     ].join(" ")}
                   >
                     {item.label}
-                  </button>
+                  </a>
                 ))}
               </nav>
 
@@ -169,16 +177,18 @@ export function Navbar() {
 
           <div className="h-[calc(100vh-4rem)] overflow-auto overscroll-contain px-4 py-4 pb-[calc(env(safe-area-inset-bottom)+1rem)]">
             <div className="rounded-2xl border border-slate-900/10 bg-white shadow-sm shadow-black/5 p-2">
-              {items.map((item) => (
-                <button
-                  key={item.href}
-                  type="button"
-                  onClick={() => handleNav(item.href)}
-                  className="w-full cursor-pointer text-left px-3 py-3 rounded-xl text-slate-800 hover:text-slate-900 hover:bg-slate-900/5 transition-colors font-semibold"
-                >
-                  {item.label}
-                </button>
-              ))}
+              <nav className="flex flex-col">
+                {items.map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    onClick={(e) => handleNavClick(e, item.href)}
+                    className="block w-full cursor-pointer text-left px-3 py-3 rounded-xl text-slate-800 hover:text-slate-900 hover:bg-slate-900/5 transition-colors font-semibold"
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </nav>
             </div>
 
             <a
@@ -193,4 +203,3 @@ export function Navbar() {
     </>
   );
 }
-

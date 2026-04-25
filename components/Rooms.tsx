@@ -26,12 +26,11 @@ const rooms = [
 
 export function Rooms() {
   return (
-    <section className="py-20">
+    <section id="rooms" className="py-20">
       <div className="px-6 md:px-12 lg:px-20">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-end justify-between gap-6">
             <div>
-              <div id="rooms" className="scroll-mt-24" />
               <p className="text-sm font-semibold tracking-wide text-sky-700">
                 Stay options
               </p>
@@ -82,7 +81,7 @@ export function Rooms() {
                 <div className="relative aspect-4/3">
                   <Image
                     src={room.image}
-                    alt={room.title}
+                    alt={`${room.title} room at Jakadevi Homestay Malvan`}
                     fill
                     className="object-cover"
                     sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"

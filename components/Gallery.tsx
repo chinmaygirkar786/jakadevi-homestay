@@ -4,17 +4,36 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 
-const images = [
-  { src: "/images/IMG-20260424-WA0019.jpg", alt: "Homestay photo 1" },
-  { src: "/images/IMG-20260424-WA0029.jpg", alt: "Homestay photo 2" },
-  { src: "/images/IMG-20260424-WA0034.jpg", alt: "Homestay photo 3" },
-  { src: "/images/IMG-20260424-WA0031.jpg", alt: "Homestay photo 4" },
-  { src: "/images/IMG-20260424-WA0032.jpg", alt: "Homestay photo 5" },
-  { src: "/images/IMG-20260424-WA0033.jpg", alt: "Homestay photo 6" },
-];
-
 export function Gallery() {
-  const items = useMemo(() => images, []);
+  const items = useMemo(
+    () => [
+      {
+        src: "/images/IMG-20260424-WA0019.jpg",
+        alt: "Cozy room interior at Jakadevi Homestay Malvan",
+      },
+      {
+        src: "/images/IMG-20260424-WA0029.jpg",
+        alt: "Comfortable stay spaces at Jakadevi Homestay in Malvan",
+      },
+      {
+        src: "/images/IMG-20260424-WA0034.jpg",
+        alt: "Family-friendly homestay moments in Malvan, Konkan",
+      },
+      {
+        src: "/images/IMG-20260424-WA0031.jpg",
+        alt: "Clean and simple room setup at Jakadevi Homestay Malvan",
+      },
+      {
+        src: "/images/IMG-20260424-WA0032.jpg",
+        alt: "Coastal stay vibes near Malvan beach at Jakadevi Homestay",
+      },
+      {
+        src: "/images/IMG-20260424-WA0033.jpg",
+        alt: "Malvan homestay experience at Jakadevi Homestay in Konkan",
+      },
+    ],
+    [],
+  );
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const isOpen = openIndex !== null;
 
@@ -73,12 +92,11 @@ export function Gallery() {
   };
 
   return (
-    <section className="py-20">
+    <section id="gallery" className="py-20">
       <div className="px-6 md:px-12 lg:px-20">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-end justify-between gap-6">
             <div>
-              <div id="gallery" className="scroll-mt-24" />
               <p className="text-sm font-semibold tracking-wide text-sky-700">
                 Moments
               </p>

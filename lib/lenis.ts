@@ -42,13 +42,18 @@ export function lenisScrollTo(target: string, offset = 0) {
   const el = document.querySelector(target);
   if (!el) return;
 
+  const scrollTarget =
+    el instanceof HTMLElement && el.tagName === "SECTION"
+      ? (el.querySelector("h2") as HTMLElement | null) ?? el
+      : (el as HTMLElement);
+
   const lenis = window.__lenis;
   if (!lenis) {
-    el.scrollIntoView({ block: "start" });
+    scrollTarget.scrollIntoView({ block: "start" });
     return;
   }
 
-  lenis.scrollTo(el as unknown as HTMLElement, {
+  lenis.scrollTo(scrollTarget as unknown as HTMLElement, {
     offset: -offset,
     duration: 1.1,
   });
